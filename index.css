@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding: 0;
+}
+#tab li{
+    float: left;
+    list-style: none;
+    width: 20vw;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+}
+#container{
+    position: relative;
+}
+#content1,#content2,#content3,#content4,#content5{
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
+    top:40px;
+    left:0;
+}
+#tab1,#content1{
+    background-color: #ffcc00;
+}
+#tab2,#content2{
+    background-color: #ff00cc;
+}
+#tab3,#content3{
+    background-color: #00ccff;
+}
+#tab4,#content4{
+    background: coral;
+}
+#tab5,#content5{
+    background: royalblue;
+}
