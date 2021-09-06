@@ -1,4 +1,4 @@
-let dataset1=[
+var dataset1=[
     {
         time:0,
         motionScore:30
@@ -16,13 +16,13 @@ let dataset1=[
         motionScore:70
     },
     {
-        time:22,
+        time:23,
         motionScore:20
     }
 ]
-let dataset2=[
+var dataset2=[
     {
-        time:22,
+        time:23,
         motionScore:100
     },
     {
@@ -44,8 +44,8 @@ let dataset2=[
 ]
 
 var width = 500;
-var height = 300;
-var padding = 40;
+var height = 400;
+var padding = 20;
 
 var xScale = d3.scaleLinear()
     .domain([0, 23])
@@ -65,6 +65,22 @@ var linePath = d3.line()
     .x(function(d){ return xScale(d["time"]) })
     .y(function(d){ return yScale(d["motionScore"]) });
 
+function draw_axix(){
+    var xAxis = d3.axisBottom()
+        .scale(xScale);
+    var yAxis = d3.axisLeft()
+        .scale(yScale);
+    svg.append('g')
+        .attr('class', 'axis')
+        .attr('transform', 'translate(' + padding + ',' + (height - padding) + ')')
+        .call(xAxis);
+    svg.append('g')
+        .attr('class', 'axis')
+        .attr('transform', 'translate(' + padding + ',' + padding + ')')
+        .call(yAxis);
+}
+
+
 function draw_pic(n) {
     let dataset;
     let thecolor;
@@ -76,7 +92,6 @@ function draw_pic(n) {
         dataset = dataset2;
         thecolor = 'green'
     }
-    console.log(11111)
     svg.append('g')
         .append('path')
         .attr('class', 'line-path')
@@ -98,15 +113,29 @@ function draw_pic(n) {
         })
         .attr('fill', thecolor)
         .attr("onclick", function (d) {
-            console.log(d.motionScore)
             return d.motionScore
         });
 };
-function draw_star(n){
+function draw_star(n,emoji){
     let star = "";
     for (let i=0;i<n;++i){
-        star += "🌟";
+        star += emoji;
     }
-    d3.selectAll("h3").text(star);
+    return star;
 }
-draw_pic(1);
+
+function clean_pic(){
+    document.getElementById("line_chart").innerHTML = ""
+}
+function draw_clean(n){
+    clean_pic();
+    draw_axix();
+    draw_pic(n);
+}
+draw_clean(1);
+var e_text = d3.select("#ee").text();
+console.log(e_text);
+d3.select("#ee").text(e_text+" "+draw_star(10,"🤯"));
+console.log(e_text);
+var p_text = d3.select("#pp").text();
+d3.select("#pp").text(p_text+" "+draw_star(7,"😧"));
