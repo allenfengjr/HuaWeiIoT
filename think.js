@@ -4,8 +4,20 @@ var dataset1=[
         motionScore:30
     },
     {
+        time:1,
+        motionScore:10
+    },
+    {
+        time:2,
+        motionScore:20
+    },
+    {
         time:3,
         motionScore:60
+    },
+    {
+        time:4,
+        motionScore:30
     },
     {
         time:5,
@@ -79,7 +91,12 @@ function draw_axix(){
         .attr('transform', 'translate(' + padding + ',' + padding + ')')
         .call(yAxis);
 }
-
+var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .text("a simple tooltip");
 
 function draw_pic(n) {
     let dataset;
@@ -112,9 +129,10 @@ function draw_pic(n) {
             return 'translate(' + (xScale(d["time"]) + padding) + ',' + (yScale(d["motionScore"]) + padding) + ')'
         })
         .attr('fill', thecolor)
-        .attr("onclick", function (d) {
-            return d.motionScore
-        });
+        .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d.motionScore);})
+        .on("mousemove", function(){
+            return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+        .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 };
 function draw_star(n,emoji){
     let star = "";
