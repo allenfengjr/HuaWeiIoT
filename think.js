@@ -21,11 +21,72 @@ var dataset1=[
     },
     {
         time:5,
-        motionScore:100
+        motionScore:70
     },
     {
         time:6,
+        motionScore:50
+    },
+    {
+        time:7,
+        motionScore:60
+    },
+    {
+        time:8,
+        motionScore:80
+    },
+    {
+        time:9,
+        motionScore:100
+    },
+    {
+        time:10,
         motionScore:70
+    },
+    {
+        time:11,
+        motionScore:40
+    },
+    {
+        time:12,
+        motionScore:60
+    },
+    {
+        time:13,
+        motionScore:50
+    },
+    {
+        time:14,
+        motionScore:30
+    },
+    {
+        time:15,
+        motionScore:40
+    },
+    {
+        time:16,
+        motionScore:60
+    },
+    {
+        time:17,
+        motionScore:70
+    },
+    {
+        time:18,
+        motionScore:70
+    },{
+        time:19,
+        motionScore:80
+    },{
+        time:20,
+        motionScore:90
+    },{
+        time:21,
+        motionScore:70
+    },
+    {
+        time:22,
+        motionScore:60
     },
     {
         time:23,
@@ -34,26 +95,44 @@ var dataset1=[
 ]
 var dataset2=[
     {
-        time:23,
-        motionScore:100
-    },
-    {
-        time:6,
-        motionScore:60
-    },
-    {
-        time:5,
-        motionScore:100
-    },
-    {
-        time:3,
-        motionScore:70
-    },
-    {
         time:0,
         motionScore:20
+    },{
+        time:1,
+        motionScore:20
+    },{
+        time:2,
+        motionScore:20
+    },{
+        time:3,
+        motionScore:20
+    },{
+        time:4,
+        motionScore:20
+    },{
+        time:5,
+        motionScore:20
+    },{
+        time:6,
+        motionScore:20
+    },{
+        time:7,
+        motionScore:20
+    },{
+        time:8,
+        motionScore:20
+    },{
+        time:9,
+        motionScore:20
+    },{
+        time:10,
+        motionScore:20
+    },
+    {
+        time:11,
+        motionScore:20
     }
-]
+];
 
 var width = 500;
 var height = 400;
@@ -98,6 +177,7 @@ var tooltip = d3.select("body")
     .style("visibility", "hidden")
     .text("a simple tooltip");
 
+
 function draw_pic(n) {
     let dataset;
     let thecolor;
@@ -125,14 +205,24 @@ function draw_pic(n) {
         .append('circle')
         .attr('id', "node")
         .attr('r', 5)
+        .attr('fill', thecolor)
         .attr('transform', function (d) {
             return 'translate(' + (xScale(d["time"]) + padding) + ',' + (yScale(d["motionScore"]) + padding) + ')'
         })
-        .attr('fill', thecolor)
         .on("mouseover", function(d){return tooltip.style("visibility", "visible").text(d.motionScore);})
         .on("mousemove", function(){
             return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+    var area = d3.area()
+        .x(function(d) { return xScale(d.time); })
+        .y0(yScale(0))
+        .y1(function(d) { return yScale(d.motionScore); });
+    svg.append("path")
+        .datum(dataset)
+        .attr("class","area")
+        .attr("d",area)
+        .attr('fill',thecolor)
+        .attr('transform',"translate("+padding+","+padding+")");
 };
 function draw_star(n,emoji){
     let star = "";

@@ -1,0 +1,529 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+}
+ 
+.navbar{
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: linear-gradient(120deg, #637569 0%, #89a5b3 100%);
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+
+}
+
+.nav{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    margin-right: 15%;
+}
+
+.logo{
+    flex:1 1 auto;
+    margin-left: 10%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+a{
+    margin: 15px;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a:hover{
+    color:#000000;
+}
+
+.banner-area,.about-area, .port-area, .service-area,.contact-area{
+    position:relative;
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap:wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 1000px;
+    background: url("white_tech.png");
+}
+
+
+
+.text-part{
+    width:65%;
+    height:80%;
+}
+h1{
+    font-size:40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h2{
+  font-size:80px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3{
+    font-size:30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+p{
+    font-size:30px;
+    line-height: 50px;
+    /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;粗黑*/
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.banner-area{
+  width:100%;
+  height:100vh;
+  background-repeat: no-repeat;
+  -webkit-background-size:cover;
+  background-size: cover;
+
+}
+.about-area{
+  backdrop-filter: blur(5px);
+}
+
+.service-area{
+    backdrop-filter: blur(5px);
+}
+.port-area{
+  backdrop-filter: blur(5px);
+}
+.contact-area{
+  backdrop-filter: blur(5px);
+}
+.think-area{
+    background: url("white_tech.png");
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.cont {
+    display: flex;
+    justify-content: left;
+    margin: 30px;
+    align-items: left;
+    box-sizing: border-box;
+  }
+
+  .one {
+    position: relative;
+    top:-50px;
+    margin-top: 1em;
+    padding: 10px;
+    display: inline-block;
+    font-size: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    border-radius: 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    width: 80%;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    opacity: 0.9;
+    transform-style: preserve-3d;
+    backdrop-filter: blur(5px);
+  }
+
+  .one2 {
+    position: relative;
+    top:-220px;
+    margin-top: 1em;
+    padding: 10px;
+    display: inline-block;
+    font-size: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    border-radius: 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    width: 70%;
+      background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    opacity: 0.9;
+    transform-style: preserve-3d;
+    backdrop-filter: blur(5px);
+  }
+
+  .card {
+    position: relative;
+    left:0px;
+    top:0px;
+    text-align: none;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border-radius: 30px;
+    background: rgba(109, 136, 119, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 2em;
+    width: 40%;
+    
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 1em;
+    backdrop-filter: blur(5px);
+  }
+
+  .card2 {
+    position: relative;
+    left:0px;
+    top:0px;
+    text-align: none;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(253, 253, 253, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    color: black;
+    padding: 2em;
+    width: 80%;
+    
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 1em;
+    backdrop-filter: blur(5px);
+  }
+
+
+ .city {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 1.5em;
+    transform: translateZ(30px);
+  }
+
+  @keyframes drift {
+    from {
+      transform: rotate(0deg);
+    }
+    from {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+  .weather {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+    align-items: center;
+  }
+
+  .temp {
+    margin: 0;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0.1em;
+    transform: translateZ(30px);
+  }
+
+  .description {
+    text-transform: capitalize;
+    margin-left: 8px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .other {
+    font-size: 1.2em;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateZ(30px);
+  }
+
+  .china{
+    font-family:Microsoft YaHei  ;
+    font-size: 0.8em;
+  }
+
+  .two {
+    display: flex;
+    height: 75vh;
+    top: 10%;
+    justify-content:center;
+    margin: 30px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  
+  h1.temp {
+    margin: 0;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0.1em;
+    transform: translateZ(30px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .icon {
+    animation: rotates 2.5s linear infinite alternate;
+  }
+
+  .card:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .card2:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /*轮播图css*/
+*{
+	margin: 0;
+	padding: 0;
+	text-align: none;
+
+}
+	
+body{
+    margin: 0;
+    padding: 0;
+}
+ /*设置显示图片的大小，溢出隐藏*/
+.slidershow{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+}
+/*居中*/
+.middle{
+	position: relative;
+
+}
+/*导航   设置绝对位置，弹性布局，按钮位置*/
+.navigaion{
+	position: absolute;
+	bottom: 5px;  		/*底部距离*/
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+}
+/*设置按钮属性*/
+.bar{
+	width: 50px;
+	height: 10px;
+	border: 2px solid #FFF8DC;
+	margin:0.375rem;
+	cursor: pointer;
+	transition: 0.4s;
+}
+.bar:hover{
+	background-color: #FFF8DC;
+}
+/*隐藏了按钮*/
+
+input[name="r"]{
+	position: absolute;
+	visibility: hidden;
+	
+}
+
+.slides{
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
+
+.slide{
+	width: 20%;
+	transition:0.6s;/*delay(延迟)*/
+	
+}
+
+.slide img{
+	width: 100%;
+	height: 100%;
+}
+
+/*绑定按钮*/
+#r1:checked~ .s1{
+	margin-left: 0;
+}
+#r2:checked~ .s1{
+	margin-left: -20%;
+}
+#r3:checked~.s1{
+	margin-left: -40%;
+}
+
+.col{
+    margin-top: 20px;
+    padding: 10px;
+    position:relative;
+    transform-style: preserve-3d;
+
+    border-radius: 25px;
+}
+.area{
+    opacity:0.5;
+    stroke-width: 0;
+}
+
+/* Normal white Button as seen on Google.com*/
+button {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+
+button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+
+button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;
+}
+
+/* Blue button as seen on translate.google.com*/
+button.blue {
+    color: white;
+    background: #4C8FFB;
+    border: 1px #3079ED solid;
+    box-shadow: inset 0 1px 0 #80B0FB;
+}
+
+button.blue:hover {
+    border: 1px #2F5BB7 solid;
+    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+    background: #3F83F1;
+}
+
+button.blue:active {
+    box-shadow: inset 0 2px 5px #2370FE;
+}
+
+/* Orange button as seen on blogger.com*/
+button.orange {
+    color: white;
+    border: 1px solid #FB8F3D;
+    background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
+    background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
+    background: -ms-linear-gradient(top, #FDA251, #FB8F3D);
+}
+
+button.orange:hover {
+    border: 1px solid #EB5200;
+    background: -webkit-linear-gradient(top, #FD924C, #F9760B);
+    background: -moz-linear-gradient(top, #FD924C, #F9760B);
+    background: -ms-linear-gradient(top, #FD924C, #F9760B);
+    box-shadow: 0 1px #EFEFEF;
+}
+
+button.orange:active {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* Red Google Button as seen on drive.google.com */
+button.red {
+    background: -webkit-linear-gradient(top, #DD4B39, #D14836);
+    background: -moz-linear-gradient(top, #DD4B39, #D14836);
+    background: -ms-linear-gradient(top, #DD4B39, #D14836);
+    border: 1px solid #DD4B39;
+    color: white;
+    text-shadow: 0 1px 0 #C04131;
+}
+
+button.red:hover {
+    background: -webkit-linear-gradient(top, #DD4B39, #C53727);
+    background: -moz-linear-gradient(top, #DD4B39, #C53727);
+    background: -ms-linear-gradient(top, #DD4B39, #C53727);
+    border: 1px solid #AF301F;
+}
+
+button.red:active {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.2);
+    background: -webkit-linear-gradient(top, #D74736, #AD2719);
+    background: -moz-linear-gradient(top, #D74736, #AD2719);
+    background: -ms-linear-gradient(top, #D74736, #AD2719);
+}
+
+.fade-in-words{
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+/*自定义一个透明度从0到1的动画，它的名称是fade-in*/
+@keyframes fade-in{
+    0%{ opacity: 0;}
+    100%{opacity:1;}
+}
+@-webkit-keyframes fade-in{
+    0%{ opacity: 0;}
+    100%{opacity:1;}
+}
+@-ms-keyframes fade-in{
+    0%{ opacity: 0;}
+    100%{opacity:1;}
+}
+@-o-keyframes fade-in{
+    0%{ opacity: 0;}
+    100%{opacity:1;}
+}
+@-moz-keyframes fade-in{
+    0%{ opacity: 0;}
+    100%{opacity:1;}
+}
+.first-words,.second-words,.third-words,.four-words,.five-words{
+    opacity: 0;      /*实先规定文字的状态是不显示的*/
+    animation: fade-in 4s ease 0s 1;    /*调用名称为fade-in的动画，全程动画显示时间4S，进入方式为ease，延时0S进入，播放次数1次*/
+    -webkit-animation: fade-in 4s ease 0s 1;
+    -moz-animation: fade-in 4s ease 0s 1;
+    -o-animation: fade-in 4s ease 0s 1;
+    -ms-animation: fade-in 4s ease 0s 1;
+
+    /*规定动画的最后状态为结束状态*/
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+}

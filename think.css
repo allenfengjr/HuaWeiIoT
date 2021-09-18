@@ -8,3 +8,7 @@
     border-radius: 25px;
     background: #F8F8FA;
 }
+.area{
+    opacity:0.5;
+    stroke-width: 0;
+}

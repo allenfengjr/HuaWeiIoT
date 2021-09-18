@@ -1,42 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-    <script src="index.js"></script>
-    <title>智慧生活</title>
-</head>
-</style>
-<body>
-<ul id="tab">
-    <!--show() method-->
-    <li id="tab1" value="1" onclick="nextpage(1)"> 衣</li>
-    <li id="tab2" value="2" onclick="nextpage(2)"> shi</li>
-    <li id="tab3" value="3" onclick="nextpage(3)"> zhu</li>
-    <li id="tab4" value="4" onclick="nextpage(4)"> xing</li>
-    <li id="tab5" value="5" onclick="nextpage(5)"> xiang</li>
-</ul>
-<div id="container">
-    <div id="welcome" style="z-index: 1">
-        <h1>welcome to HuaWei smart IoT</h1>
-        <h2>a demo</h2>
-    </div>
-    <div id="content1">
-        <div><a href="cloth.html" target="_self">cloth</a></div>
-    </div>
-    <div id="content2">
-        <div><a href="food.html" target="_self">food</a></div>
-    </div>
-    <div id="content3">
-        <div><a href="home.html" target="_self">home</a></div>
-    </div>
-    <div id="content4">
-        <div><a href="sport.html" target="_self">sport</a></div>
-    </div>
-    <div id="content5">
-        <div><a href="think.html" target="_self">think</a></div>
-    </div>
-</div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+        <tytle></tytle>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="icon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/script.js" defer></script>
+        <script src="d3.v5.min.js"></script>
+
+    </head>
+    <body onload="myFunction()">
+        <div class="navbar">
+            <a href="#" class="logo">Smart Life</a>
+            <ul class="nav">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">Wearing衣</a></li>
+                <li><a href="#portfolio">Food Intake食</a></li>
+                <li><a href="#services">House 住</a></li>
+                <li><a href="#contact">Activity 行</a></li>
+                <li><a href="#think">Emotion 想</a> </li>
+            </ul>
+        </div>
+        <div class="banner-area" id="home">
+            <div class="two">
+            <div class="card2">
+                <h2>Smart Life:<br/></h2>
+                <p>细粒度生活画像推断</p>
+                    <div class="fade-in-words">
+                        <div class="flex">
+                            <h1 class="first-words">&emsp;衣&emsp;</h1>
+                            <h1 class="second-words">&emsp;食&emsp;</h1>
+                            <h1 class="third-words">&emsp;住&emsp;</h1>
+                            <h1 class="four-words">&emsp;行&emsp;</h1>
+                            <h1 class="five-words">&emsp;想&emsp;</h1>
+
+                        </div>
+                    </div>
+            </div>
+            
+                    <img src="1234.png"  width="400" height="400" />
+                    
+            </div>
+          
+        </div>
+        <div class="about-area" id="about">
+            <style>
+                .left {
+                    float: left;
+                    width: 650px;
+                    height: 0px;
+                    background-color: white;
+                }
+                .right {
+                    background-color: white;
+                    margin-left: 650px;
+                    height: 0px;
+                }
+            </style>
+            <div class="text-part">
+                <div class="cont">
+                    <div class="one">
+                        <h1>Vitual Chest：云衣柜 </h1>
+                    </div>
+                </div>
+                <div class="two">
+
+
+                    <div class="card" style="width: 80%">
+                        <p>当前穿着</p>
+                        <img src="kuzi1.jpg" width="200" height="280"/>
+                        <p>喜好程度</p>
+                        <font>上衣:</font>
+                        <img id="slide_photo" src="star1.png">
+                        <script language =javascript >
+                            var i=0;//图片索引
+                            var arr=new Array();    //图片列表
+                            arr[0]="star1.png";
+                            arr[1]="star2.png";
+                            arr[2]="star3.png";
+                            arr[3]="star4.png";
+                            function slide_photos()
+                            {
+                                var photo=document.getElementById("slide_photo");
+                                if (i==arr.length-2)
+                                {
+                                    i=3;
+                                }
+                                else
+                                {
+                                    i+=1;
+                                    setTimeout("slide_photos()",1000);
+                                }
+                                photo.src=arr[i];    //直接定义图片
+                            }
+                            //重新加载的时间
+                            setTimeout("slide_photos()",1000);
+                        </script>
+                        <p></p>
+                        <font>下装:</font>
+                        <img id="slide_photo1" src="star1.png">
+                        <script language =javascript >
+                            var ii=0;//图片索引
+                            var arr=new Array();    //图片列表
+                            arr[0]="star1.png";
+                            arr[1]="star2.png";
+                            arr[2]="star3.png";
+                            arr[3]="star4.png";
+                            function slide_photos1()
+                            {
+                                var photo1=document.getElementById("slide_photo1");
+                                if (ii==arr.length-2)
+                                {
+                                    ii=2;
+                                }
+                                else
+                                {
+                                    ii+=1;
+                                    setTimeout("slide_photos1()",1000);
+                                }
+                                photo1.src=arr[ii];    //直接定义图片
+                            }
+                            //重新加载的时间
+                            setTimeout("slide_photos1()",1000);
+                        </script>
+                    </div>
+                    <div class="card2">
+                        <div class="other">
+                            <p>基于您穿衣喜好的购物推荐<br/></p>
+                            <china>根据您的购买记录，穿衣频率，当前时令的智能推荐</china>
+                        </div>
+                        <div class="slidershow middle">
+
+                            <div class="slides">
+
+                                <input type="radio" name="r" id="r11" checked>
+                                <input type="radio" name="r" id="r21" >
+                                <input type="radio" name="r" id="r31" >
+
+                                <div class="slide s1">
+                                    <img src=img1.jpg alt="" >
+                                </div>
+
+                                <div class="slide">
+                                    <img src=img0.jpg alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src=img2.jpg alt="">
+                                </div>
+                            </div>
+
+                            <div class="navigaion">
+                                <label for="r11" class="bar"></label>
+                                <label for="r21" class="bar"></label>
+                                <label for="r31" class="bar"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="port-area" id="portfolio">
+                <div class="one" >
+                    <h1>食物摄入分析</h1>
+                </div>
+            <div class="flex" id='dashboard'>
+            </div>
+            <script src="https://d3js.org/d3.v3.min.js"></script>
+            <script>
+                function dashboard(id, fData){
+                    var barColor = 'steelblue';
+                    function segColor(c){ return {脂肪:"#d6c84b", 蛋白质:"#a7dce0",卡路里:"#26bcd5"}[c]; }
+
+                    // compute total for each state.
+                    fData.forEach(function(d){d.total=d.freq.low+d.freq.mid+d.freq.high;});
+
+                    // function to handle histogram.
+                    function histoGram(fD){
+                        var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+                        hGDim.w = 500 - hGDim.l - hGDim.r,
+                            hGDim.h = 300 - hGDim.t - hGDim.b;
+
+                        //create svg for histogram.
+                        var hGsvg = d3.select(id).append("svg")
+                            .attr("width", hGDim.w + hGDim.l + hGDim.r)
+                            .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
+                            .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+
+                        // create function for x-axis mapping.
+                        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+                            .domain(fD.map(function(d) { return d[0]; }));
+
+                        // Add x-axis to the histogram svg.
+                        hGsvg.append("g").attr("class", "x axis")
+                            .attr("transform", "translate(0," + hGDim.h + ")")
+                            .call(d3.svg.axis().scale(x).orient("bottom"));
+
+                        // Create function for y-axis map.
+                        var y = d3.scale.linear().range([hGDim.h, 0])
+                            .domain([0, d3.max(fD, function(d) { return d[1]; })]);
+
+                        // Create bars for histogram to contain rectangles and freq labels.
+                        var bars = hGsvg.selectAll(".bar").data(fD).enter()
+                            .append("g").attr("class", "bar");
+
+                        //create the rectangles.
+                        bars.append("rect")
+                            .attr("x", function(d) { return x(d[0]); })
+                            .attr("y", function(d) { return y(d[1]); })
+                            .attr("width", x.rangeBand())
+                            .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                            .attr('fill',barColor)
+                            .on("mouseover",mouseover)// mouseover is defined below.
+                            .on("mouseout",mouseout);// mouseout is defined below.
+
+                        //Create the frequency labels above the rectangles.
+                        bars.append("text").text(function(d){ return d3.format(",")(d[1])})
+                            .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
+                            .attr("y", function(d) { return y(d[1])-5; })
+                            .attr("text-anchor", "middle");
+
+                        function mouseover(d){  // utility function to be called on mouseover.
+                            // filter for selected state.
+                            var st = fData.filter(function(s){ return s.State == d[0];})[0],
+                                nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
+
+                            // call update functions of pie-chart and legend.
+                            pC.update(nD);
+                            leg.update(nD);
+                        }
+
+                        function mouseout(d){    // utility function to be called on mouseout.
+                            // reset the pie-chart and legend.
+                            pC.update(tF);
+                            leg.update(tF);
+                        }
+
+                        // create function to update the bars. This will be used by pie-chart.
+                        hG.update = function(nD, color){
+                            // update the domain of the y-axis map to reflect change in frequencies.
+                            y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
+
+                            // Attach the new data to the bars.
+                            var bars = hGsvg.selectAll(".bar").data(nD);
+
+                            // transition the height and color of rectangles.
+                            bars.select("rect").transition().duration(500)
+                                .attr("y", function(d) {return y(d[1]); })
+                                .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                                .attr("fill", color);
+
+                            // transition the frequency labels location and change value.
+                            bars.select("text").transition().duration(500)
+                                .text(function(d){ return d3.format(",")(d[1])})
+                                .attr("y", function(d) {return y(d[1])-5; });
+                        }
+                        return hG;
+                    }
+
+                    // function to handle pieChart.
+                    function pieChart(pD){
+                        var pC ={},    pieDim ={w:250, h: 250};
+                        pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
+
+                        // create svg for pie chart.
+                        var piesvg = d3.select(id).append("svg")
+                            .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+                            .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
+
+                        // create function to draw the arcs of the pie slices.
+                        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
+
+                        // create a function to compute the pie slice angles.
+                        var pie = d3.layout.pie().sort(null).value(function(d) { return d.freq; });
+
+                        // Draw the pie slices.
+                        piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
+                            .each(function(d) { this._current = d; })
+                            .style("fill", function(d) { return segColor(d.data.type); })
+                            .on("mouseover",mouseover).on("mouseout",mouseout);
+
+                        // create function to update pie-chart. This will be used by histogram.
+                        pC.update = function(nD){
+                            piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
+                                .attrTween("d", arcTween);
+                        }
+                        // Utility function to be called on mouseover a pie slice.
+                        function mouseover(d){
+                            // call the update function of histogram with new data.
+                            hG.update(fData.map(function(v){
+                                return [v.State,v.freq[d.data.type]];}),segColor(d.data.type));
+                        }
+                        //Utility function to be called on mouseout a pie slice.
+                        function mouseout(d){
+                            // call the update function of histogram with all data.
+                            hG.update(fData.map(function(v){
+                                return [v.State,v.total];}), barColor);
+                        }
+                        // Animating the pie-slice requiring a custom function which specifies
+                        // how the intermediate paths should be drawn.
+                        function arcTween(a) {
+                            var i = d3.interpolate(this._current, a);
+                            this._current = i(0);
+                            return function(t) { return arc(i(t));    };
+                        }
+                        return pC;
+                    }
+
+                    // function to handle legend.
+                    function legend(lD){
+                        var leg = {};
+
+                        // create table for legend.
+                        var legend = d3.select(id).append("table").attr('class','legend');
+
+                        // create one row per segment.
+                        var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+
+                        // create the first column for each segment.
+                        tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
+                            .attr("width", '16').attr("height", '16')
+                            .attr("fill",function(d){ return segColor(d.type); });
+
+                        // create the second column for each segment.
+                        tr.append("td").text(function(d){ return d.type;});
+
+                        // create the third column for each segment.
+                        tr.append("td").attr("class",'legendFreq')
+                            .text(function(d){ return d3.format(",")(d.freq);});
+
+                        // create the fourth column for each segment.
+                        tr.append("td").attr("class",'legendPerc')
+                            .text(function(d){ return getLegend(d,lD);});
+
+                        // Utility function to be used to update the legend.
+                        leg.update = function(nD){
+                            // update the data attached to the row elements.
+                            var l = legend.select("tbody").selectAll("tr").data(nD);
+
+                            // update the frequencies.
+                            l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
+
+                            // update the percentage column.
+                            l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});
+                        }
+
+                        function getLegend(d,aD){ // Utility function to compute percentage.
+                            return d3.format("%")(d.freq/d3.sum(aD.map(function(v){ return v.freq; })));
+                        }
+
+                        return leg;
+                    }
+
+                    // calculate total frequency by segment for all state.
+                    var tF = ['脂肪','蛋白质','卡路里'].map(function(d){
+                        return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))};
+                    });
+
+                    // calculate total frequency by state for all segment.
+                    var sF = fData.map(function(d){return [d.State,d.total];});
+
+
+                    var pC = pieChart(tF), // create the pie-chart.
+                        leg= legend(tF),
+                        hG = histoGram(sF) // create the legend.
+                }
+            </script>
+            <script>
+                var freqData=[
+                    {State:'鱼',freq:{low:4786, mid:1319, high:249}}
+                    ,{State:'面食',freq:{low:1101, mid:412, high:674}}
+                    ,{State:'水果',freq:{low:932, mid:2149, high:418}}
+                    ,{State:'饮料',freq:{low:832, mid:1152, high:1862}}
+                    ,{State:'蔬菜',freq:{low:4481, mid:3304, high:948}}
+                    ,{State:'粗粮',freq:{low:1619, mid:167, high:1063}}
+                    ,{State:'其他',freq:{low:1819, mid:247, high:1203}}
+                ];
+
+                dashboard('#dashboard',freqData);
+            </script>
+            </div>
+
+        <div class="service-area" id="services">
+            <div class="text-part">
+                <div class="cont">
+                    <div class="one">
+                        <h1>室内环境感知 </h1>
+                    </div>
+                </div>
+                <div class="two">
+                    <div class="card" >
+                        <div class="other">
+                            <p>💒传感器数据:<br/></p>
+                        </div>
+                        <div class="other">
+                            <p>户外天气:<br/></p>
+                        </div>
+                            <div class="flex">
+                                <marquee behavior="alternate" width="60" scrollamount=1><img src="icon.png" width="50" height="50" alt="" class="icon" /></marquee>
+                                <div class="description">Cloudy</div>
+                            </div>
+                            <div class="other">
+                                <p>室内温度 :<br/>21°C</p>
+                                <p>室内湿度 :<br/> 60%</p>
+                                <p>光照亮度 :<br/> 160 cd</p>
+                                <china>小贴士：当前室内温度适宜，室外温度较低，注意保暖哦</china>
+                            </div>
+                    </div>
+                <div class="card2">
+                    <div class="other">
+                        <p>👗云衣柜推荐穿衣:<br/></p>
+                        <china>根据当前气候在您的衣柜里为您推荐以下服装</china>
+                    </div>
+                    <div class="slidershow middle">
+        
+                        <div class="slides">
+                              
+                            <input type="radio" name="r" id="r1" checked>
+                            <input type="radio" name="r" id="r2" >
+                            <input type="radio" name="r" id="r3" >
+                            
+                            <div class="slide s1">
+                              <img src=img1.jpg alt="" >
+                            </div>
+                            
+                            <div class="slide">
+                              <img src=img0.jpg alt="" >
+                            </div>
+                            
+                            <div class="slide">
+                             <img src=img2.jpg alt="" >
+                            </div> 
+                        </div>
+                          
+                        <div class="navigaion">
+                            <label for="r1" class="bar"></label>
+                            <label for="r2" class="bar"></label>
+                            <label for="r3" class="bar"></label>
+                        </div>		
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-area" id="contact">
+            <script src="d3.v5.min.js"></script>
+            <div class="text-part" align="center">
+                <div class="card2" style="width: 50%">
+                    <h1 align="center">行为识别</h1>
+                </div>
+                <div class="flex">
+                    <div class="card2">
+                        <video id="real" src="video/1631245805011010.mp4" width=100%  ></video>
+                    </div>
+                    <div class="card2">
+                        <video id="anime" src="video/stickman.mkv" width=100%></video>
+                    </div>
+                </div>
+                <!--按⬅️键和➡️键分别播放两个视频-->
+                <h1 align="center" onclick="acr_refresh()">点击此处刷新您的运动数据</h1>
+                <div class="flex">
+                    <h3 id="sit">您的久坐时间为 &emsp;&emsp;&emsp;&emsp;</h3><h3 id="sit_time">00:00:00</h3>
+                </div>
+                <div class="flex">
+                    <h3 id="walk">您的站立时间为 &emsp;&emsp;&emsp;</h3><h3 id="walk_time">00:00:00</h3>
+                </div>
+                <div class="flex">
+                    <h3 id="sport">您的运动时间为 &emsp;&emsp;&emsp;</h3><h3 id="sport_time">00:00:00</h3>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+        <div class="think-area" id="think">
+            <div class="flex">
+                <div class="card2" id="left" style=" width:45%">
+                    <div class="div-col" id="features">
+                        <h1>情绪指数</h1>
+                        <h3 id="ee">兴奋指数</h3>
+                        <h3 id="pp">压力指数</h3>
+                    </div>
+                    <div class="margin"></div>
+                    <div class="div-col" id="chart">
+                        <svg id="line_chart">
+                        </svg>
+                        <button class="red" id="pressure" onclick="draw_clean(1)"> pressure   </button>
+                        <button class="blue" id="excitement" onclick="draw_clean(2)"> excitement   </button>
+                    </div>
+
+                </div>
+                <div class="card2" id="right" ; style="width:55%">
+                    <h1 id="recommendation"> 推荐</h1>
+                    <h3 onclick="refresh()">根据您的情绪，为您推荐如下视频和音乐</h3>
+                    <p align="center" id="rec_content">
+                        <iframe width=90% height="315" src="https://www.youtube.com/embed/lpcpsCY4Mco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/one-last-kiss/1542953969?i=1542953977&l=en"></iframe>
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/cn/album/koi/1156375337?i=1156375396&l=en"></iframe>
+                    </p>
+                </div>
+            </div>
+            <script type="text/javascript" src="./js/think.js"></script>
+
+            <a href="think.html"></a>
+        </div>
+        <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+        <script type="text/javascript" src="js/transportation.js"></script>
+
+        <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 15,
+            glare: true,
+            reverse: true,
+            "max-glare": 0.5,
+            speed: 400
+        });
+        VanillaTilt.init(document.querySelectorAll(".card"));
+    </script>
+    </body>
 </html>
